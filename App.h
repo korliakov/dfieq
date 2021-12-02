@@ -13,20 +13,32 @@ Header file. Here you can announce your class and methods;
 */
 
 
-template <typename T> //float, double etc. 
+// template <typename T> //float, double etc. 
 class App {
 
 private:
 
-int N; //порядок уравнения
-std::vector<double> coefs; 
+	int eq_ord; //порядок уравнения
+	std::vector<double> coefs; 
 
-std::vector<std::vector<T>> var; //vector var contains t, x, x', x'' ...
-std::vector<T> initial_cond; //initial conditions, t=0, x(0), x'(0) ...
-
+	std::vector<std::vector<double>> var; //vector var contains t, x, x', x'' ...
+	std::vector<double> initial_cond; //initial conditions, t=0, x(0), x'(0) ...
+	
+	double delta; //iteration step for time
+	double time; //time-coordinate of last point
 
 public:
 
+
+	void euler_solver();
+	void heun_solver();
+	void rk4_solver();
+
+	void analytical_solver();
+
+	void print_to_file(std::string path);
+
+	void resize_all();
 
 
 
