@@ -7,7 +7,15 @@
 #include <math.h>
 #include "App.h"
 
+
+
 int main() {
+
+	App a;
+
+
+
+	a.euler_solver();
 
 
 }
