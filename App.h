@@ -18,27 +18,37 @@ class App {
 
 private:
 
-	int eq_ord; //порядок уравнения
+	int eq_ord; //equation order, number of highest derivative
 	std::vector<double> coefs; 
 
-	std::vector<std::vector<double>> var; //vector var contains t, x, x', x'' ...
-	std::vector<double> initial_cond; //initial conditions, t=0, x(0), x'(0) ...
+	std::vector<std::vector<double>> var; //vector var contains x, x', x'' ..., x^(eq_ord), t
+	std::vector<double> initial_cond; //initial conditions, x(0), x'(0) ..., t=0
 	
 	double delta; //iteration step for time
 	double time; //time-coordinate of last point
+	int N; //number of points
 
 public:
 
+	App(int eq_ord, std::vector<double> coefs , std::vector<double> initial_cond, double delta, double time); //fully defined at App.cpp
 
-	void euler_solver();
+	void euler_solver();//fully defined at App.cpp
 	void heun_solver();
 	void rk4_solver();
 
+
+
 	void analytical_solver();
 
-	void print_to_file(std::string path);
+	void print_to_file(std::string path); //it has a problem, i ll fix it
 
 	void resize_all();
+
+
+	//helping to debug functions
+	void pr_print(); //fully defined at App.cpp; prints list of x coordinate
+
+
 
 
 
