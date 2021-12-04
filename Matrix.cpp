@@ -47,6 +47,7 @@ Matrix& Matrix::operator=(Matrix obj){
 }
 
 void Matrix::show(){
+    std::cout << std::endl;
     for(int i=0; i < size; i++){
         for(int j=0; j < size; j++){
             std::cout << matr[i][j] << " ";
@@ -93,7 +94,12 @@ Matrix Matrix::exp(double t, double min) {
     Matrix curr_add = Matrix(size);
     curr_add.make_ones();
     int i = 0;
-    while (curr_add.norm()>min*min){
+    double Min = min*min;
+    if (t<1.0){
+        Min = min*min*t*t;
+    }
+    while (curr_add.norm()>Min){
+        //curr_add.show();
         res = res + curr_add;
         curr_add = curr_add*tmp;
         curr_add = curr_add*(1.0/double(i+1));
