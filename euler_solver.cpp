@@ -34,7 +34,9 @@ void App::euler_solver() {
 			var_cur[j] = var[j][i-1] + var[j+1][i-1]*delta;
 
 
-			last_derivative -= var[j][i-1] * (coefs[j]/coefs[eq_ord]);
+			last_derivative -= var_cur[j] * (coefs[j]/coefs[eq_ord]);
+			// last_derivative -= var[j][i-1] * (coefs[j]/coefs[eq_ord]);
+
 		}
 
 
