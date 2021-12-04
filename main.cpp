@@ -18,6 +18,7 @@ int main() {
 	a.euler_solver();
 	a.euler_solver();
 	a.pr_print();
+	a.print_to_file(path);
 
 
 }

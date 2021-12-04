@@ -8,21 +8,21 @@
 #include "App.h"
 
 
-// void App::print_to_file(std::string path) {
+void App::print_to_file(std::string path) {
 
-// 	std::ofstream out;
+	std::ofstream out (path);
 
-// 	if (out.is_open()) {
+	if (out.is_open()) {
 
-// 		for (int j = 0; j < N; j++)  {
-// 			for (int i = 0; i < eq_ord+2; i++) {
+		for (int j = 0; j < N; j++)  {
+			for (int i = 0; i < eq_ord+2; i++) {
 
-// 				out << var[i][j] << ' ';
+				out << var[i][j] << ' ';
 
-// 			}
-// 			out << "\n";
-// 		}
-// 	}
+			}
+			out << "\n";
+		}
+	}
 
 
-// }
+}
