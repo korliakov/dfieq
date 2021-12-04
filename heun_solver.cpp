@@ -32,20 +32,20 @@ void App::heun_solver() {
 
 
 
-            last_derivative -= var[j][i-1] * (coefs[j]/coefs[eq_ord]);
+            last_derivative -= var_cur[j] * (coefs[j]/coefs[eq_ord]);
         }
 
         var_cur[eq_ord] = last_derivative;
 
         // counting p-c method
-
+        last_derivative = 0;
         for (int j = 0; j < eq_ord; j++) {
 
             var_cur[j] = var[j][i-1] + 0.5*delta*(var[j+1][i-1]+var_cur[j+1]);
 
 
 
-            last_derivative -= 0.5*(var[j][i-1]+var_cur[j]) * (coefs[j]/coefs[eq_ord]);
+            last_derivative -= var_cur[j] * (coefs[j]/coefs[eq_ord]);
         }
 
         var_cur[eq_ord] = last_derivative;
