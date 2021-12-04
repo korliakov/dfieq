@@ -15,8 +15,8 @@ int main() {
 
 	App a {2, {1, 0, 1}, {1, 0}, 0.01, 100};
 
-	a.euler_solver();
-	a.euler_solver();
+
+	a.rk4_solver();
 	a.pr_print();
 	a.print_to_file(path);
 
