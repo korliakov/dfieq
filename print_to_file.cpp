@@ -14,7 +14,7 @@ void App::print_to_file(std::string path) {
 
 	if (out.is_open()) {
 
-		for (int j = 0; j < N; j++)  {
+		for (int j = 1; j < N; j++)  {
 			for (int i = 0; i < eq_ord+2; i++) {
 
 				out << var[i][j] << ' ';
