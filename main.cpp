@@ -13,7 +13,7 @@ int main() {
 
 	std::string path = "numbers.txt";
 
-	App a {2, {1, 0, 1}, {1, 0}, 0.01, 100};
+	App a {3, {1, 0.01, 10, 10}, {1, 0, 0}, 0.01, 500};
 
 
 	a.rk4_solver();
