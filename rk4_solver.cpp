@@ -17,19 +17,7 @@ void App::rk4_solver() {
 
 
 
-	for (int i = 0; i < eq_ord; i++) {
-
-		var_cur[i] = initial_cond[i]; // solved problem	
-		var[i][0] = initial_cond[i];
-				
-
-	}
-
-
-	var_cur[eq_ord] = 0;	
-	var_cur[eq_ord+1] = 0;
-	var[eq_ord][0] = 0;
-	var[eq_ord+1][0] = 0;
+	fill_with_initial_cond(var_cur);
 
 	for (int i = 1; i < N; i++) {
 		double last_derivative = 0;

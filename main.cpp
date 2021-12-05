@@ -13,11 +13,11 @@ int main() {
 
 	std::string path = "numbers.txt";
 
-	App a {3, {1, 0.01, 10, 10}, {1, 0, 0}, 0.01, 500};
+	App a {2, {1, 0, 1}, {1, 0, 0}, 0, 0.01, 20};
 
 
-	a.rk4_solver();
-	a.pr_print();
+	a.analytical_solver(0.01);
+	// a.pr_print();
 	a.print_to_file(path);
 
 

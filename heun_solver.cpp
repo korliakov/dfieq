@@ -5,18 +5,10 @@ void App::heun_solver() {
 
     std::vector<double> var_cur(eq_ord+2, 0); //current values of variables
 
-    for (int i = 0; i < eq_ord; i++) {
 
-        var_cur[i] = initial_cond[i];
-        var[i][0] = initial_cond[i];
-    }
+    fill_with_initial_cond(var_cur);
 
 
-
-    var_cur[eq_ord] = 0; // we must change it
-    var_cur[eq_ord+1] = 0;
-    var[eq_ord][0] = 0;
-    var[eq_ord+1][0] = 0;
 
 
 

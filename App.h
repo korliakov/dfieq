@@ -22,7 +22,7 @@ private:
 	std::vector<double> coefs; //coefs for all parts of equation
 
 	std::vector<std::vector<double>> var; //vector var contains x, x', x'' ..., x^(eq_ord), t
-	std::vector<double> initial_cond; //initial conditions, x(0), x'(0) ..., t=0
+	std::vector<double> initial_cond; //initial conditions, x(0), x'(0) ...,
 	int initial_cond_skip; //number of derivative which depends on others
 
 	double delta; //iteration step for time
@@ -31,18 +31,19 @@ private:
 
 public:
 
-	App(int eq_ord, std::vector<double> coefs , std::vector<double> initial_cond, double delta, double time); //fully defined at App.cpp
+	App(int eq_ord, std::vector<double> coefs , std::vector<double> initial_cond, double delta, double time); //fully defined at App.cpp; x(0), x'(0) ..., t=0, x(eq_ord) depends on others
 
-	void euler_solver();//fully defined at App.cpp
-	void heun_solver();
-	void rk4_solver();
+	App(int eq_ord, std::vector<double> coefs , std::vector<double> initial_cond, int initial_cond_skip, double delta, double time); //x(0), x'(0) ..., t=0, x(initial_cond_skip) depends on others
+
+	void euler_solver(); //done
+	void heun_solver(); // done
+	void rk4_solver(); //done
+	void analytical_solver(double max_error); //done
+	void print_to_file(std::string path); //done
 
 
 
-	void analytical_solver();
-
-	void print_to_file(std::string path); //it has a problem, i ll fix it
-
+	void fill_with_initial_cond(std::vector<double> &vec);
 	void resize_all();
 
 

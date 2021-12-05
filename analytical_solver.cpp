@@ -4,11 +4,11 @@
 
 void App::analytical_solver(double max_error) {
 
-    std::vector<double> initial; //current values of variables
 
-    for (int i = 0; i < eq_ord; i++) {
-        initial.push_back(initial_cond[i]);
-    }
+    std::vector<double> initial(eq_ord+2, 0); //current values of variables
+
+    fill_with_initial_cond(initial);
+
 
     Matrix A = Matrix(eq_ord);
     for (int i = 1; i<eq_ord;i++){
