@@ -5,7 +5,9 @@ void App::heun_solver() {
 
     std::vector<double> var_cur(eq_ord+2, 0); //current values of variables
 
+
     fill_with_initial_cond(var_cur);
+
 
 
 
