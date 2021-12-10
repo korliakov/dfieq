@@ -40,7 +40,7 @@ public:
 	void rk4_solver(); //done
 	void analytical_solver(double max_error); //done
 	void print_to_file(std::string path); //done
-
+	void get_plot_image();
 
 
 	void fill_with_initial_cond(std::vector<double> &vec);
